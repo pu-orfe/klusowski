@@ -6,6 +6,7 @@ This repository contains the static mirror of [klusowski.princeton.edu](https://
 
 * `/` - The root directory contains the static files served by GitHub Pages.
 * `publications/`, `students/`, `talks/`, `group/` - Sub-pages mapped to clean relative directories.
+* `cv/` - LaTeX source, BibTeX references, and supporting class file for the downloadable CV.
 * `core/`, `profiles/`, `sites/`, `themes/`, `libraries/` - Static assets, images, CSS stylesheets, JavaScript files, and documents downloaded from the original site.
 * `.nojekyll` - Bypasses GitHub Pages' default Jekyll build processor so that assets starting with underscores or dots are served correctly.
 * `mirror.py` - The crawler script to scrape the site, download new files, and rewrite URLs.
@@ -41,6 +42,15 @@ To refresh the static mirror (requires the bypass header configured inside the s
    python3 mirror.py
    ```
 
+### Updating the CV
+The homepage links to the compiled PDF at `sites/g/files/toruqf5901/files/documents/Klusowski_cv.pdf` and to the editable source files in `cv/`.
+
+To update it:
+1. Edit `cv/Klusowski_cv.tex` and `cv/reference_Klusowski.bib`.
+2. From `cv/`, compile with `latexmk -pdf Klusowski_cv.tex`.
+3. Copy the generated `Klusowski_cv.pdf` over `sites/g/files/toruqf5901/files/documents/Klusowski_cv.pdf`.
+4. Commit and push the changed source files and PDF.
+
 ---
 
 ## AI Assistant Prompt
@@ -72,5 +82,4 @@ Here are the key details and constraints of the codebase:
 
 Please keep these constraints in mind whenever I ask you to make updates, add publications, modify student details, or tweak pages.
 ```
-
 

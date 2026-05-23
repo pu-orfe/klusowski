@@ -1,0 +1,801 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Professional CV
+% LaTeX Template
+% Version 2.0 (8/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Trey Hunner (http://www.treyhunner.com/)
+%
+% Important note:
+% This template requires the resume.cls file to be in the same directory as the
+% .tex file. The resume.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{resume} 
+% Use the custom resume.cls style
+\usepackage[T1]{fontenc}
+\usepackage{newtxmath,newtxtext}
+\usepackage{amsbsy,amsmath,amscd,amsfonts}
+
+\usepackage{natbib}
+\usepackage{bibentry}
+
+\parindent=0in
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[C]{Klusowski, p. \thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt} 
+\newcounter{mine}
+\thispagestyle{empty}
+\clubpenalty=0\widowpenalty=0
+\usepackage{enumitem,kantlipsum}
+
+\newcommand{\cvSubheader}[1]{%
+  \par\medskip
+  \noindent\textsc{\bfseries #1}\par
+  \vspace{0.15em}
+  \hrule height 0.35pt
+  \vspace{0.55em}
+}
+
+\geometry{top=0.6in, bottom=0.6in, left=0.75in, right=0.75in} % Document margins
+\name{Jason M. Klusowski}
+\address{
+\href{mailto:jason.klusowski@princeton.edu}{jason.klusowski@princeton.edu}} 
+\address{
+\url{https://klusowski.princeton.edu} 
+}
+
+\begin{document}
+\nobibliography{reference_Klusowski}
+\bibliographystyle{plain}
+
+
+%----------------------------------------------------------------------------------------
+%	WORK SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Employment}
+
+\begin{rSubsection}{Princeton University, School of Engineering and Applied Science (SEAS)}{July 1, 2026}{Associate Professor (with tenure) \\ Department of Operations Research \& Financial Engineering (ORFE)}{Princeton, New Jersey, USA}
+\item Participating Faculty, Center for Statistics and Machine Learning (CSML)
+\item Affiliated Faculty, Princeton Laboratory for Artificial Intelligence (AI Lab)
+\item Affiliated Faculty, Princeton Language and Intelligence (PLI)
+\end{rSubsection}
+\begin{rSubsection}{Princeton University, School of Engineering and Applied Science (SEAS)}{2020--2026}{Assistant Professor \\ Department of Operations Research \& Financial Engineering (ORFE)}{Princeton, New Jersey, USA}
+\end{rSubsection}
+\begin{rSubsection}{Rutgers University---New Brunswick}{2018--2020}{Assistant Professor \\ Department of Statistics}{Piscataway, New Jersey, USA}
+\end{rSubsection}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+\begin{rSubsection}{Yale University}{2013--2018}{Ph.D. in Statistics \& Data Science}{New Haven, Connecticut, USA}
+\item Advisor: Andrew R. Barron
+\item Thesis: ``Density, Function, and Parameter Estimation with High-Dimensional Data''
+%\item Francis J. Anscombe Award: ``Given on an occasional basis for outstanding academic performance in the Department of Statistics.''
+\end{rSubsection}
+\begin{rSubsection}{Yale University}{2017}{M.A. in Statistics}{New Haven, Connecticut, USA}
+\end{rSubsection}
+\begin{rSubsection}{University of Manitoba}{2008--2013}{B.Sc. (Honours) in Mathematics \& Statistics}{Winnipeg, Manitoba, Canada}
+%\item Canadian Governor General's Silver Medal: ``Awarded to the undergraduate who achieves the highest academic standing upon graduation from a bachelor degree program.''
+\end{rSubsection}
+\end{rSection}
+
+\begin{rSection}{Awards \& Honors}
+
+\begin{rSubsection}{Alfred P. Sloan Research Fellowship}{2025--2027}{In Mathematics}{\$75,000}
+\end{rSubsection}
+
+\begin{rSubsection}{Annals of Statistics Invited Paper Session, Joint Statistical Meetings}{2025}{Paper: ``Convergence Rates of Oblique Regression Trees for Flexible Function Libraries''}{\phantom}
+\end{rSubsection}
+
+\begin{rSubsection}{SEAS Letter of Commendation for Teaching, Princeton University}{Fall 2023 \& Spring 2025}{``For outstanding teaching'' in ORF 405 and ORF 570}{\phantom}
+\end{rSubsection}
+
+\begin{rSubsection}{Howard B. Wentz, Jr., SEAS Junior Faculty Award, Princeton University}{2023}{``For outstanding teaching and research''}{\$50,000}
+\end{rSubsection}
+
+\begin{rSubsection}{Francis J. Anscombe Award, Yale University}{2018}{``Given on an occasional basis for outstanding academic performance in the Department of Statistics''}{\phantom}
+\end{rSubsection}
+
+\begin{rSubsection}{Clarke Fellow, Yale University}{2014--2016}{Wedworth W. Clarke (B.A. 1906) Scholarship Fund}{\phantom}
+\end{rSubsection}
+
+\begin{rSubsection}{NSERC Alexander Graham Bell Canada Graduate Scholarship}{2013}{Government of Canada}{\$17,500}
+\end{rSubsection}
+
+\begin{rSubsection}{Canadian Governor General's Silver Medal, University of Manitoba}{2013}{``Awarded to the undergraduate who achieves the highest academic standing upon graduation from a bachelor degree program''}{\phantom}
+\end{rSubsection}
+\end{rSection}
+
+\begin{rSection}{Grants}
+
+\begin{rSubsection}{SEAS Project X Innovation Research Grant ``Improving Predictions by Combining Models''}{2024--2026}{Principal Investigator}{\$140,000}
+\end{rSubsection}
+
+\begin{rSubsection}{NSF CAREER DMS-2239448 ``Statistical Learning with Recursive Partitioning: Algorithms, Accuracy, \& Applications''}{2023--2028}{Principal Investigator}{\$450,000}
+\end{rSubsection}
+\begin{rSubsection}{NSF DMS-2054808 ``Deep Learning \& Random Forests for High-Dimensional Regression''}{2019--2023}{Principal Investigator}{\$180,000}
+\end{rSubsection}
+\begin{rSubsection}{NSF TRIPODS-1934924 ``Data Science Principles of the Human-Machine Convergence''}{2019--2023}{Senior Personnel}{\$1,500,000}
+\end{rSubsection}
+
+\end{rSection}
+
+\begin{rSection}{Editorial Appointments}
+\begin{rSubsection}{Bernoulli---Journal of the Bernoulli Society}{2025--2027}{Associate Editor}{\phantom}
+\end{rSubsection}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Research Papers}
+{\bf{Decision Trees, Random Forests, and Ensemble Methods}}
+\begin{itemize}[leftmargin=0cm]
+\item[] \textit{Journal Articles}
+\begin{enumerate}[leftmargin=0.5cm]
+\item \bibentry{tan2024statistical}
+\par\emph{Selected for poster presentation at ICML 2026 through the Annals of Statistics journal-to-conference track.}
+\item \bibentry{cattaneo2025inference}
+\item \bibentry{cattaneo2024convergence}
+\item \bibentry{klusowski2024large}
+%\item \bibentry{klusowski2021sparse}
+\end{enumerate}
+\item[] \textit{Conference Proceedings}
+\begin{enumerate}[leftmargin=0.5cm]
+\item \bibentry{klusowski2021sharp}
+\item \bibentry{klusowski2021nonparametric}
+\item \bibentry{klusowski2020sparse}
+\end{enumerate}
+\item[] \textit{Preprints}
+\begin{enumerate}[leftmargin=0.5cm]
+\item \bibentry{cattaneo2025honest}
+\item \bibentry{chen2025revisiting}
+\item \bibentry{chen2023error}
+\end{enumerate}
+\item[] \textit{Technical Reports}
+\begin{enumerate}[leftmargin=0.5cm]
+\item \bibentry{cattaneo2022pointwise}
+\end{enumerate}
+%\item \textit{Works in Progress}
+%\begin{enumerate}[leftmargin=0.5cm]
+%\item \bibentry{klusowski2023effect}
+%\end{enumerate}
+\end{itemize}
+
+{\bf{Statistical Theory and Methodology}}
+\begin{itemize}[leftmargin=0cm]
+\item[] \textit{Journal Articles}
+\begin{enumerate}[leftmargin=0.5cm]
+\item \bibentry{chen2026stochastic}
+\item \bibentry{fan2025robust}
+\par\emph{Selected for poster presentation at NeurIPS 2025 through the Annals of Statistics journal-to-conference track.}
+\item \bibentry{bu2023characterizing}
+\item \bibentry{brunel2021estimation}
+\item \bibentry{bu2021algorithmic}
+\item \bibentry{klusowski2020estimating}
+\item \bibentry{klusowski2019estimating}
+\item \bibentry{brinda2019holder}
+\item \bibentry{brinda2018finite}
+\end{enumerate}
+\item[] \textit{Conference Proceedings}
+\begin{enumerate}[leftmargin=0.5cm]
+\item \bibentry{shi2026coupled}
+\item \bibentry{bu2019algorithmic}
+\item \bibentry{klusowski2018motif}
+\end{enumerate}
+\item[] \textit{Editorials}
+\begin{enumerate}[leftmargin=0.5cm]
+\item \bibentry{klusowski2026information}
+\end{enumerate}
+\item[] \textit{Preprints}
+\begin{enumerate}[leftmargin=0.5cm]
+\item \bibentry{maleki2026high}
+\item \bibentry{xia2026classification}
+\item \bibentry{bu2026sharp}
+\end{enumerate}
+\item[] \textit{Technical Reports}
+\begin{enumerate}[leftmargin=0.5cm]
+\item \bibentry{liang2024challenges}
+\item \bibentry{klusowski2016statistical}
+\end{enumerate}
+\end{itemize}
+
+{\bf{Neural Networks, Transformers, and Foundation Models}}
+\begin{itemize}[leftmargin=0em]
+\item[] \textit{Journal Articles}
+\begin{enumerate}[leftmargin=0.5cm]
+\item \bibentry{klusowski2025sharp}
+\item \bibentry{klusowski2018approximation}
+\end{enumerate}
+\item[] \textit{Conference Proceedings}
+\begin{enumerate}[leftmargin=0.5cm]
+\item \bibentry{chen2025decoding}
+\item \bibentry{gao2024global}
+\item \bibentry{li2024one}
+\item \bibentry{cattaneo2024implicit}
+\item \bibentry{theisen2021good}
+\item \bibentry{klusowski2017minimax}
+\end{enumerate}
+\item[] \textit{Technical Reports}
+\begin{enumerate}[leftmargin=0.5cm]
+\item \bibentry{barron2021approximation}
+\item \bibentry{barron2019complexity}
+\item \bibentry{klusowski2016risk}
+\end{enumerate}
+\end{itemize}
+\end{rSection}
+
+\begin{rSection}{Visiting Positions}
+
+\begin{rSubsection}{Yale University}{September 2026--January 2027}{Visiting Fellow \\ Department of Statistics \& Data Science}{New Haven, Connecticut, USA}
+\end{rSubsection}
+
+\begin{rSubsection}{The Wharton School, University of Pennsylvania}{September 2017--May 2018}{Visiting Graduate Student \\ Department of Statistics}{Philadelphia, Pennsylvania, USA}
+\end{rSubsection}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	TALKS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Invited Presentations}
+
+\cvSubheader{Invited Seminars, Colloquia, and Webinars}
+
+\begin{rSubsection}{Department of Statistics}{December 3, 2026}{University of Wisconsin, Madison}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{University of California, Irvine}{November 12, 2026}{Department of Statistics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Princeton University}{March 30, 2026}{Department of Mathematics}{PACM Colloquium Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{University of California, San Francisco}{February 19, 2026}{Department of Epidemiology and Biostatistics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{University of Southern California Marshall School of Business}{November 21, 2025}{Department of Data Sciences and Operations}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Johns Hopkins University}{October 30, 2025}{Department of Applied Mathematics and Statistics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Online Causal Inference Seminar}{October 16, 2025}{Virtual}{Discussant}
+\end{rSubsection}
+
+\begin{rSubsection}{University of South Carolina}{October 16, 2025}{Department of Statistics}{Colloquium Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Humboldt University of Berlin}{May 28, 2025}{Berlin, Germany}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Iowa State University}{April 28, 2025}{Department of Statistics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Harvard University}{February 21, 2025}{Probabilitas Seminar Series}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{University of California, Irvine}{October 17, 2024}{Department of Statistics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Georgia Institute of Technology}{March 28, 2024}{School of Mathematics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Texas A\&M University}{March 6, 2024}{Department of Mathematics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Michigan State University}{October 12, 2023}{Department of Statistics and Probability}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Instacart}{June 5, 2023}{Economics Group}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Princeton University}{April 11, 2023}{Department of Economics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{American Statistical Association}{March 30, 2023}{Section on Statistical Learning and Data Science}{Webinar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Cornell University}{March 22, 2023}{Department of Statistics and Mathematics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{SUNY Binghamton}{March 21, 2023}{Department of Statistics and Mathematics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{University of Sydney Business School}{February 23, 2023}{Business Analytics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{George Mason University}{November 18, 2022}{Department of Statistics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{The Wharton School, University of Pennsylvania}{April 20, 2022}{Department of Statistics and Data Science}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Rutgers Business School}{December 9, 2021}{Management Science and Information Systems}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{University of Chicago}{November 29, 2021}{Department of Statistics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Heidelberg University}{November 25, 2021}{Statistics Group}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{London Business School}{September 30, 2021}{Management Science and Operations}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{University of Florida}{March 11, 2021}{Department of Statistics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Merck \& Co., Inc.}{October 14, 2020}{Biostatistics Group}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Purdue University}{October 5, 2020}{Department of Mathematics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{One World Seminar Series on the Mathematics of Machine Learning}{September 30, 2020}{Virtual}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{University of California, Berkeley}{May 28, 2020}{Michael Mahoney's Research Group}{Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Princeton University}{November 22, 2019}{Department of Operations Research \& Financial Engineering}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Rutgers University---New Brunswick}{October 2, 2019}{Department of Electrical and Computer Engineering}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Pennsylvania State University}{September 27, 2019}{Department of Mathematics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Columbia University}{September 16, 2019}{Department of Statistics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Colgate-Palmolive Company}{August 6, 2019}{Statistics Group}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Merck \& Co., Inc.}{July 17, 2019}{Biostatistics Group}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Princeton University}{April 8, 2019}{Department of Operations Research \& Financial Engineering}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{University of Maryland, College Park}{October 16, 2018}{Department of Mathematics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Baruch College, Zicklin School of Business}{February 14, 2018}{Department of Information Systems and Statistics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{University of North Carolina at Chapel Hill}{February 5, 2018}{Department of Statistics and Operations Research}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Rutgers University---New Brunswick}{February 1, 2018}{Department of Statistics and Biostatistics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{University of Delaware}{January 23, 2018}{Department of Applied Economics and Statistics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Indiana University}{January 16, 2018}{Department of Statistics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{University of Notre Dame}{January 12, 2018}{Department of Applied and Computational Mathematics and Statistics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Queen's University}{November 29, 2017}{Department of Mathematics and Statistics}{Seminar Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Boston Machine Learning Group}{June 6, 2016}{StubHub, Boston, Massachusetts, USA}{Seminar Speaker}
+\end{rSubsection}
+
+\cvSubheader{Invited Conference, Workshop, and Symposium Presentations}
+
+\begin{rSubsection}{FIM-IMS Joint Workshop on Mathematics of Data Science}{November 16--20, 2026}{Singapore}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Conference on Statistical Foundations of Artificial Intelligence (CSFAI)}{November 13--14, 2026}{University of California, Santa Barbara}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{7th International Symposium on Nonparametric Statistics}{June 22--26, 2026}{Thessaloniki, Greece}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{NJ Workshop on Machine Learning and Information Theory}{May 1, 2026}{New Jersey Institute of Technology}{Workshop Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Harvard University}{October 6--10, 2025}{Workshop on Mathematical Foundations of AI}{Workshop Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Conference on Mathematical Statistics in the Information Age}{September 17--19, 2025}{Vienna, Austria}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Joint Statistical Meetings (JSM)}{August 2--7, 2025}{Nashville, Tennessee}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{ICSA Applied Statistics Symposium}{June 15--18, 2025}{Storrs, Connecticut}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{International Indian Statistical Association (IISA) 2025 Conference}{June 12--15, 2025}{Lincoln, Nebraska}{Session Speaker and Panelist}
+\end{rSubsection}
+
+\begin{rSubsection}{Columbia University}{April 3--4, 2025}{Workshop on Optimization and Statistical Learning}{Workshop Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{IMS International Conference on Statistics and Data Science (ICSDS)}{December 2024}{Nice, France}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Bernoulli-IMS 11th World Congress in Probability and Statistics}{August 14, 2024}{Bochum, Germany}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{IMS International Conference on Statistics and Data Science (ICSDS)}{December 19, 2023}{Lisbon, Portugal}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Joint Statistical Meetings (JSM)}{August 10, 2023}{Toronto, Canada}{Session Speaker}
+\end{rSubsection}
+
+%\begin{rSubsection}{2023 Joint Statistics and Data Science Meeting (CJSM)}{July 12, 2023}{Beijing, China}{Session Speaker}
+%\end{rSubsection}
+
+\begin{rSubsection}{Western North American Region of The International Biometric Society (WNAR)}{June 14, 2022}{New Frontiers in Nonparametric Learning, Sparse Learning, and Deep Learning}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{6th Canadian Conference in Applied Statistics}{July 17, 2021}{Statistics and Deep Learning}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{International Indian Statistical Association}{May 22, 2021}{Random Forests and Ensemble Learning}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{CMStatistics}{December 19, 2020}{Recent Advances Toward Understanding Deep Learning}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{2020 Joint Statistical Meetings (JSM)}{August 5, 2020}{Theoretical Advances in Deep Learning}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Duke University}{August 13, 2019}{SAMSI Deep Learning Workshop}{Workshop Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Columbia University}{June 19, 2019}{Workshop on Machine Learning and Data Science}{Workshop Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Virginia Tech}{May 22, 2019}{IMS/ASA Spring Research Conference}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{New England Statistics Symposium}{May 17, 2019}{Hartford, Connecticut}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Georgia Institute of Technology}{October 8, 2018}{Workshop on Theoretical Foundation of Deep Learning}{Workshop Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Simon Fraser University}{July 26, 2018}{20th IMS New Researchers Conference}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{IEEE International Symposium on Information Theory}{June 27, 2017}{Aachen, Germany}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{Universit\'{e} de Montr\'{e}al}{July 2013}{Canadian Undergraduate Mathematics Conference}{Session Speaker}
+\end{rSubsection}
+
+\begin{rSubsection}{UBC Okanagan}{July 2012}{Canadian Undergraduate Mathematics Conference}{Session Speaker}
+\end{rSubsection}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	TEACHING SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Teaching and Advising}
+\begin{rSubsection}{Princeton University, Department of ORFE}{Spring 2025}{Instructor}{Princeton, New Jersey, USA}
+\item ORF 570 -- Special Topics in Statistics and Operations Research: Transformers and Large Language Models
+\end{rSubsection}
+\begin{rSubsection}{Princeton University, Department of ORFE}{Spring 2021, 2022, 2023, 2024 \& 2026}{Instructor}{Princeton, New Jersey, USA}
+\item ORF/FIN 504 -- Financial Econometrics
+\end{rSubsection}
+\begin{rSubsection}{Princeton University, Department of ORFE}{Fall 2021, 2022, 2023, 2024, \& 2025}{Instructor}{Princeton, New Jersey, USA}
+\item ORF 405 -- Regression and Applied Time Series
+\end{rSubsection}
+\begin{rSubsection}{Princeton University, Department of ORFE}{Fall 2020--Present}{Advisor}{Princeton, New Jersey, USA}
+\item ORF 498/499 -- Undergraduate Senior Thesis
+\item ORF 509 -- Ph.D. Directed Research I
+\item ORF 510 -- Ph.D. Directed Research II
+\end{rSubsection}
+\begin{rSubsection}{Rutgers University---New Brunswick, Department of Statistics}{Spring 2019 \& 2020}{Instructor}{New Brunswick, New Jersey, USA}
+\item STAT 597 -- Data Wrangling \& Husbandry (MSDS)
+\end{rSubsection}
+\begin{rSubsection}{Rutgers University---New Brunswick, Department of Statistics}{Fall 2019}{Instructor}{New Brunswick, New Jersey, USA}
+\item STAT 534 -- Statistical Learning for Data Science (MSDS)
+\end{rSubsection}
+\begin{rSubsection}{Rutgers University---New Brunswick, Department of Statistics}{Fall 2018}{Instructor}{New Brunswick, New Jersey, USA}
+\item STAT 581 -- Probability \& Statistical Inference (MSDS \& FSRM)
+\end{rSubsection}
+\begin{rSubsection}{Yale University, Department of Statistics \& Data Science}{2014--2017}{Teaching Fellow}{New Haven, Connecticut, USA}
+\item STAT 664 -- Information Theory
+\item STAT 541 -- Probability Theory
+\item STAT 365 -- Data Mining and Machine Learning
+\item STAT 312 -- Linear Models
+\item STAT 238 -- Probability and Statistics
+\end{rSubsection}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	SERVICE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Professional Service}
+
+\begin{rSubsection}{Academic Leadership}{}{}{}
+\item {Bernoulli-IMS 11$^{\text{th}}$ World Congress in Probability and Statistics, Organizer of Session on ``Classification and Clustering,'' 2024}
+\item {Joint Statistical Meetings (JSM), Co-organizer of Session on ``Recent Advances in Decision Tree and Random Forest Theory,'' 2023}
+\item  {Princeton Day of Statistics, Organizing Committee, 2022 \& 2023}
+\item S. S. Wilks Memorial Seminar in Statistics, Organizing Committee Chair, 2020, 2021, 2022, 2023, \& 2025
+\item {IMS Committee on Travel Awards, Committee Member, 2024--2027}
+%\item {Co-editor of the Springer Festschrift ``Information Theory, Probability and Statistical Learning: A Festschrift
+%in Honor of Andrew Barron,'' 2025}
+%\item {Co-author of a forthcoming \emph{Statistical Science} article on key challenges and opportunities in high-dimensional statistics with Arian Maleki, Subhabrata Sen, Sivaraman Balakrishnan, Verena Zuber, Chao Gao, Rishabh Dudeja, Christos Thrampoulidis, Anru R. Zhang, Weijie Su, Jason M. Klusowski, Po-Ling Loh, Ali Shojaie}
+\end{rSubsection}
+
+\begin{rSubsection}{Postdoctoral Advising}{}{}{}
+\item {Omar Hagrass, DataX Postdoctoral Research Associate, Princeton University, July 2024--Present}
+\item {Eric Xia, ORFE, Princeton University, October 2025--Present}
+\end{rSubsection}
+
+\begin{rSubsection}{Doctoral Student Advising}{}{}{}
+\item {Jiahao Shi, Ph.D. in ECE, Princeton University, expected 2029}
+\item {Chang Yu, Ph.D. in ORFE, Princeton University, expected 2028}
+\item {Sijin Chen, Ph.D. in ECE, Princeton University, expected 2028}
+\item {Xin Chen, Ph.D. in ORFE, Princeton University, expected 2026}
+\item {Cheng Gao (co-advised with Jianqing Fan), Ph.D. in ORFE, Princeton University, 2024 \\
+Thesis: ``Transfer Learning and Optimization Theory for Large-Scale Models'' \\
+Initial placement: Quantitative Researcher at DRW Holdings, LLC}
+%\item {William Underwood, Ph.D. in ORFE, Princeton University, 2024 \\
+%Postdoctoral Research Associate, Department of Pure Mathematics and Mathematical Statistics, University of Cambridge, 2024--2026}
+%\item {Rajita Chandak, Ph.D. in ORFE, Princeton University, 2024 \\
+%Bernoulli Instructor, Institute of Mathematics, École Polytechnique Fédérale de Lausanne (EPFL), 2024--2026 \\
+%Initial placement: Assistant Professor, Department of Statistics, University of Wisconsin, starting 2026}
+\item {Peter Tian, Ph.D. in ORFE, Princeton University, 2023
+\\
+Thesis: ``Statistical Guarantees For Adaptive Recursive Partitioning Based Estimators''
+\\ Initial placement: Quantitative Researcher at Two Sigma Investments, LP}
+\end{rSubsection}
+
+\begin{rSubsection}{Doctoral Student Thesis Committee}{}{}{}
+\item {Irina Wang, Princeton ORFE FPO Exam, 2026}
+\item {Silvia Tao, Princeton ORFE FPO Exam, 2026}
+\item {Jiawei Ge, Princeton ORFE FPO Exam, 2026}
+\item {Giulia Crippa, Princeton ORFE FPO Exam, 2026}
+\item {Shange Tang, Princeton ORFE FPO Exam, 2026}
+\item {Zihao Li, Princeton ECE FPO Exam, 2026}
+\item {Francesco Caporali, Princeton ORFE General Exam, 2026}
+\item {Tianze Jiang, Princeton ORFE General Exam, 2026}
+\item {Yihong Gu, Princeton ORFE FPO Exam, 2025}
+\item {Jikai Hou, Princeton ORFE FPO Exam, 2025}
+\item {Jake Freeman, Princeton ORFE General Exam, 2025}
+\item {Ximing Li, Princeton ORFE General Exam, 2025}
+\item {Qishuo Yin, Princeton ORFE General Exam, 2025}
+\item {Chang Yu, Princeton ORFE General Exam, 2025}
+\item {Sijin Chen, Princeton ECE General Exam, 2025}
+\item {Cheng Gao, Princeton ORFE FPO Exam, 2024}
+\item {Rajita Chandak, Princeton ORFE FPO Exam, 2024}
+\item {William Underwood, Princeton ORFE FPO Exam, 2024}
+\item {Yihan He, Princeton ORFE General Exam, 2024}
+\item {Hongkang Yang, Princeton PACM FPO Exam, 2023}
+\item {Devavrat Dabke, Princeton PACM FPO Exam, 2023}
+\item {Mengxin Yu, Princeton ORFE FPO Exam, 2023}
+\item {Bingyan Wang, Princeton ORFE FPO Exam, 2023}
+\item {Yuling Yan, Princeton ORFE FPO Reader, 2023}
+\item {Samy Jelassi, Princeton ORFE FPO Reader, 2023}
+\item {Jiawei Ge, Princeton ORFE General Exam, 2023}
+\item {Boris Shigida, Princeton ORFE General Exam, 2023}
+\item {Zhixu Tao, Princeton ORFE General Exam, 2023}
+\item {Ruiqi Yu, Princeton ORFE General Exam, 2023}
+\item {Xin Chen, Princeton ORFE General Exam, 2023}
+\item {Cheng Gao, Princeton ORFE General Exam, 2023}
+\item {Till Raphael Saenger, Princeton ORFE General Exam, 2023}
+\item {Giulia Crippa, Princeton ORFE General Exam, 2023}
+\item {Igor Silin, Princeton ORFE FPO Exam, 2022}
+\item {Francesca Tang, Princeton ORFE FPO Exam, 2022}
+\item {Yongyi Guo, Princeton ORFE FPO Exam, 2022}
+\item {Zheng Yu, Princeton ORFE FPO Reader, 2022}
+\item {Yaqi Duan, Princeton ORFE FPO Reader, 2022}
+\item {Zhuoran Yang, Princeton ORFE FPO Reader, 2022}
+\item {Irina Wang, Princeton ORFE General Exam, 2022}
+\item {Jikai Hou, Princeton ORFE General Exam, 2022}
+\item {Yihong Gu, Princeton ORFE General Exam, 2022}
+\item {Zachary Hervieux-Moore, Princeton ORFE FPO Reader, 2021}
+\item {Lirong Xue, Princeton ORFE FPO Reader, 2021}
+\item {Tony Ye, Princeton ORFE FPO Reader, 2021}
+\item {Yifeng Zhou, Princeton ORFE FPO Reader, 2021}
+\item {Hao Gong, Princeton ORFE FPO Reader, 2021}
+\item {Kun Lu, Princeton ORFE FPO Reader, 2021}
+\item {William Underwood, Princeton ORFE General Exam, 2021}
+\item {Rajita Chandak, Princeton ORFE General Exam, 2021}
+\item {Peter Tian, Princeton ORFE General Exam, 2021}
+\end{rSubsection}
+
+\begin{rSubsection}{Master's Student Advising}{}{}{}
+\item {Sinan Ozbay, Princeton Bendheim Center for Finance Master's Thesis, 2023}
+\end{rSubsection}
+
+\begin{rSubsection}{Undergraduate Research Advising}{}{}{}
+\item {Kyrylo Sirik, Princeton ORFE Junior Independent Work, 2026}
+\item {Benjamin Burda, Princeton ORFE Senior Thesis, 2025--2026}
+\item {Kunsel Subrahmanyam, Princeton ORFE Senior Thesis, 2025--2026}
+\item {Patrick Shaw, Princeton ORFE Senior Thesis, 2025--2026}
+\item {Tesnim Ahmed, Princeton ORFE Junior Independent Work, 2025}
+\item {Icey Siyi Ai, Princeton CSML Independent Work, 2025}
+\item {Jacob Colchamiro, Princeton ORFE Senior Thesis, 2024--2025}
+\item {Rosalind Huang, Princeton ORFE Senior Thesis, 2024--2025}
+\item {AbdurRahman Bhatti, Princeton ORFE Junior Independent Work, 2024 \& 2025}
+\item {Rosalind Huang, Princeton ORFE Junior Independent Work, 2024}
+\item {Annie Liang, 2023--2024 (Industry collaboration with Merck \& Co., Inc.)}
+\item {Ambri Ma, Princeton ORFE Senior Thesis, 2023--2024}
+\item {Riri Jiang, Princeton ORFE Senior Thesis, 2023--2024}
+\item {Addele Hargenrader, Princeton ORFE Junior Independent Work, 2023}
+\item {Jelmer Bennema, Princeton ORFE Senior Thesis, 2022--2023}
+\item {Aidan Lynott, Princeton ORFE Senior Thesis, 2022--2023}
+\item {Tony Ye, Princeton ORFE Senior Thesis, 2022--2023}
+\item {Bradley Moorehead, Princeton ORFE Senior Thesis, 2022--2023}
+\item {Roshini Balasubramanian, Princeton ORFE Senior Thesis, 2021--2022}
+\item {Aemu Anteneh, Princeton ORFE Senior Thesis, 2021--2022}
+\item {Sahithi Tirumala, Princeton ORFE Senior Thesis, 2021--2022}
+\item {Wilbur Wang, Princeton ORFE Senior Thesis, 2020--2021}
+\item {Cristina Hain, Princeton ORFE Senior Thesis, 2020--2021}
+\item {Sabarish Sainathan, Princeton COS Senior Thesis, 2020--2021}
+%\item {Charles Bagin, Princeton ORFE Senior Thesis, 2020--2021}
+%\item {Ting Yang, Rutgers PhD Thesis Defense Committee Member, 2019}
+\end{rSubsection}
+
+\begin{rSubsection}{Undergraduate Academic Advising}{}{}{}
+\item ORFE Undergraduate Academic Advising, 2020--Present
+\item BSE Incoming Freshmen Academic Advising, 2022
+\end{rSubsection}
+
+
+\begin{rSubsection}{Princeton University, Committee Member}{}{}{}
+\item {Organizing Committee Chair of S. S. Wilks Memorial Seminar in Statistics, 2020--Present}
+\item {Organizing Committee Chair of ORFE Department Colloquia, 2022--2023}
+\item {Graduate Admissions Committee, admission cycle for 2022, 2023, 2025}
+\end{rSubsection}
+
+\begin{rSubsection}{Rutgers University---New Brunswick, Committee Member}{Fall 2018--Spring 2020}{}{}
+\item {Professional Master's Program in Financial Statistics \& Risk Management}
+\item {Professional Master's Program in Data Science}
+\item {Undergraduate Studies}
+\item {Student Outreach}
+\item {Social and Retreat}
+\end{rSubsection}
+
+\begin{rSubsection}{Grant Reviewing}{March 2020, April 2022, February 2023, \& March 2024}{}{}
+\item {National Science Foundation (NSF), Division of Mathematical Sciences (DMS), Panelist in Statistics}
+\end{rSubsection}
+
+\begin{rSubsection}{Journal and Conference Refereeing}{}{}{}
+\item {\textit{Annals of Statistics}}
+\item {\textit{Journal of the American Statistical Association}}
+\item {\textit{Journal of the Royal Statistical Society, Series B}}
+\item {\textit{Econometrica}}
+\item {\textit{Biometrika}}
+\item {\textit{Journal of Computational and Graphical Statistics}}
+\item {\textit{Operations Research}}
+\item {\textit{Journal of Machine Learning Research} (Editorial Board of Reviewers)}
+\item {\textit{Bernoulli}}
+%\item {\textit{Statistica Sinica}}
+\item {\textit{Electronic Journal of Statistics}}
+%\item {\textit{IEEE Transactions on Signal and Information Processing over Networks}}
+\item {\textit{Journal of Business \& Economic Statistics}}
+\item {\textit{IEEE Transactions on Information Theory}}
+\item {\textit{Econometric Theory}}
+\item {\textit{Applied and Computational Harmonic Analysis}}
+%\item {\textit{Journal of Nonparametric Statistics}}
+\item {\textit{Statistical Science}}
+\item {\textit{Neural Networks}}
+\item {\textit{Journal of Causal Inference}}
+\item {\textit{Mathematics of Operations Research}}
+\item {\textit{SIAM Journal on Mathematics of Data Science}}
+\item {\textit{Annales de l'Institut Henri Poincar\'e (B) Probabilit\'es et Statistiques}}
+%\item {\textit{Biometrics}}
+%\item {\textit{Probability \& Statistics Letters}}
+%\item {\textit{Signal Processing}}
+%\item {\textit{Statistical Analysis and Data Mining}}
+%\item {\textit{Journal of Statistical Planning and Inference}}
+\item {\textit{2018 IEEE International Symposium on Information Theory (ISIT)}}
+\item {\textit{2019 IEEE International Symposium on Information Theory (ISIT)}}
+\item {\textit{The Thirty-sixth International Conference on Machine Learning (ICML 2019)}}
+\item {\textit{The Thirty-fourth Conference on Neural Information Processing Systems (NeurIPS 2020)}}
+\item {\textit{The Twenty-fourth International Conference on Artificial Intelligence and Statistics (AISTATS 2021)}}
+\item {\textit{The Thirty-fourth Annual Conference on Learning Theory (COLT 2021)}}
+\end{rSubsection}
+%\begin{rSubsection}{University of Manitoba, Department of Statistics Departmental Council}{2012}{}{}
+%\item {Undergraduate Student Representative, Voting Member}
+%\end{rSubsection}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	AFFILIATION SECTION
+%----------------------------------------------------------------------------------------
+
+
+\begin{rSection}{Professional Membership}
+\begin{rSubsection}{}{}{}{}
+\item IEEE Information Theory Society 
+\item American Statistical Association 
+\item Institute of Mathematical Statistics 
+\item Econometric Society
+\end{rSubsection}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	AWARDS AND SCHOLARSHIPS
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Student Awards \& Scholarships}
+%\begin{rSubsection}{Yale University}{2014--2016}{}{}
+%\item \textit{Clarke Fellow} \\
+%Wedworth W. Clarke (B.A. 1906) Scholarship Fund
+%\end{rSubsection}
+
+%------------------------------------------------
+
+%\begin{rSubsection}{Government of Canada}{2013}{}{}
+%\item \textit{NSERC Alexander Graham Bell Canada Graduate Scholarship} (\$17,500) \\
+%NSERC Postgraduate Scholarship accepted in its place
+%\end{rSubsection}
+
+%------------------------------------------------
+
+\begin{rSubsection}{Government of Canada}{2011--2013}{}{}
+\item \textit{NSERC Undergraduate Summer Research Award} (3x) (\$4,500)
+\end{rSubsection}
+
+%------------------------------------------------
+
+\begin{rSubsection}{University of Manitoba}{2009--2013}{}{}
+\item \textit{Governor General's Silver Medal} \\ ``For highest academic standing at the undergraduate level''
+\item \textit{Faculty of Science Medal in B.Sc. (Honours)} \\ ``For highest standing in a faculty or school program''
+\item \textit{Robert Ross McLaughlin Scholarship in Mathematics} \\ ``For a full-time student who has achieved the highest standing in the third year of any mathematics honours program''
+\item \textit{Patrick Burke-Gaffney Prize in Mathematics, St. Pauls College} \\ ``For academic achievement in 2011--2012''
+\item \textit{Dr. Cyril H. Goulden Memorial Scholarship in Statistics} \\ ``For high standing in honours statistics''
+\item \textit{University of Manitoba Student's Union Scholarship} (3x) \\ ``For excellence in academic achievement at the University of Manitoba''
+\item \textit{University of Manitoba Merit Award}
+\item \textit{Agnes Stewart Hart Award in Mathematics} \\ ``For high standing in the major or honours program in mathematics by a second or third year degree student in the Faculty of Science''
+\item \textit{Isbister Scholarship in University 1} \\ ``For highest standing in University 1 and continuation in any degree program at the University of Manitoba''
+\item \textit{Rosabelle Searle Leach Scholarship in Science} \\ ``For highest standing in first year science''
+\item \textit{Science Classes of 43 \& 68 Reunion Scholarship} (2x) \\
+``For academic achievement in the first
+year of an undergraduate program in science''
+\item \textit{University of Manitoba Calculus Prize---Nelson Education}
+\item Deans Honour List
+\item University 1 Honour List
+\end{rSubsection}
+\end{rSection}
+
+\begin{rSection}{Personal Information}
+\begin{rSubsection}{}{}{}{}
+\item Born May 21, 1989, Winnipeg, Manitoba, Canada
+\item Canadian citizen and U.S. permanent resident since 2022
+\item Married to Joowon Klusowski
+\end{rSubsection}
+\end{rSection}
+
+\vfill\today
+
+\end{document}
