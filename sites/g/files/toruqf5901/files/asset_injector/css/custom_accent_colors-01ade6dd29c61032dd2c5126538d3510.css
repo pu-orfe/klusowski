@@ -1,0 +1,24 @@
+.fontset h2:after, .page-title .title-line:after {
+  background-color: #aeb9ff;
+  height: 3px;
+}
+
+@media (min-width: 62rem) {
+  .menu1 .header ul.main > li:hover > a, .menu1 .header ul.main > li:focus > a, .menu1 .header ul.main > li.active > a {
+    box-shadow: inset 0 -6px #aeb9ff;
+  }
+}
+
+#footer a {
+  color: #c6ceff;
+  text-decoration-color: #c6ceff;
+}
+
+
+#footer a svg.ext {
+  fill: #c6ceff;
+}
+
+.block-outline-color-bright-medium {
+  border: 3px solid #f6f6f7;
+}
