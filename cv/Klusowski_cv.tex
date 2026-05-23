@@ -42,12 +42,10 @@
 \clubpenalty=0\widowpenalty=0
 \usepackage{enumitem,kantlipsum}
 
-\newcommand{\cvSubheader}[1]{%
+\newcommand{\cvGroupHeader}[1]{%
   \par\medskip
-  \noindent\textsc{\bfseries #1}\par
-  \vspace{0.15em}
-  \hrule height 0.35pt
-  \vspace{0.55em}
+  \noindent\textbf{#1}\par
+  \smallskip
 }
 
 \geometry{top=0.6in, bottom=0.6in, left=0.75in, right=0.75in} % Document margins
@@ -149,7 +147,7 @@
 %----------------------------------------------------------------------------------------
 
 \begin{rSection}{Research Papers}
-{\bf{Decision Trees, Random Forests, and Ensemble Methods}}
+\cvGroupHeader{Decision Trees, Random Forests, and Ensemble Methods}
 \begin{itemize}[leftmargin=0cm]
 \item[] \textit{Journal Articles}
 \begin{enumerate}[leftmargin=0.5cm]
@@ -182,7 +180,7 @@
 %\end{enumerate}
 \end{itemize}
 
-{\bf{Statistical Theory and Methodology}}
+\cvGroupHeader{Statistical Theory and Methodology}
 \begin{itemize}[leftmargin=0cm]
 \item[] \textit{Journal Articles}
 \begin{enumerate}[leftmargin=0.5cm]
@@ -220,7 +218,7 @@
 \end{enumerate}
 \end{itemize}
 
-{\bf{Neural Networks, Transformers, and Foundation Models}}
+\cvGroupHeader{Neural Networks, Transformers, and Foundation Models}
 \begin{itemize}[leftmargin=0em]
 \item[] \textit{Journal Articles}
 \begin{enumerate}[leftmargin=0.5cm]
@@ -261,7 +259,7 @@
 
 \begin{rSection}{Invited Presentations}
 
-\cvSubheader{Invited Seminars, Colloquia, and Webinars}
+\cvGroupHeader{Invited Seminars, Colloquia, and Webinars}
 
 \begin{rSubsection}{Department of Statistics}{December 3, 2026}{University of Wisconsin, Madison}{Seminar Speaker}
 \end{rSubsection}
@@ -407,7 +405,7 @@
 \begin{rSubsection}{Boston Machine Learning Group}{June 6, 2016}{StubHub, Boston, Massachusetts, USA}{Seminar Speaker}
 \end{rSubsection}
 
-\cvSubheader{Invited Conference, Workshop, and Symposium Presentations}
+\cvGroupHeader{Invited Conference, Workshop, and Symposium Presentations}
 
 \begin{rSubsection}{FIM-IMS Joint Workshop on Mathematics of Data Science}{November 16--20, 2026}{Singapore}{Session Speaker}
 \end{rSubsection}
