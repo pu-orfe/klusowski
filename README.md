@@ -43,7 +43,7 @@ To refresh the static mirror (requires the bypass header configured inside the s
    ```
 
 ### Updating the CV
-The homepage links to the compiled PDF at `sites/g/files/toruqf5901/files/documents/Klusowski_cv.pdf` and to the editable source files in `cv/`.
+The homepage links to the compiled PDF at `sites/g/files/toruqf5901/files/documents/Klusowski_cv.pdf`. The editable source files live in `cv/`.
 
 To update it:
 1. Edit `cv/Klusowski_cv.tex` and `cv/reference_Klusowski.bib`.
@@ -82,4 +82,3 @@ Here are the key details and constraints of the codebase:
 
 Please keep these constraints in mind whenever I ask you to make updates, add publications, modify student details, or tweak pages.
 ```
-

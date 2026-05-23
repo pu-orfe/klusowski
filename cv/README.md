@@ -1,6 +1,6 @@
 # CV Source
 
-This folder contains the LaTeX source for the CV linked from the homepage.
+This folder contains the LaTeX source for the CV PDF linked from the homepage.
 
 Files:
 - `Klusowski_cv.tex` - main CV source
