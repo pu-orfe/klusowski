@@ -53,7 +53,8 @@ def rewrite_url(current_page_path, url):
     parsed = urllib.parse.urlparse(url)
     
     # Adobe Typekit check
-    if 'use.typekit.net' in parsed.netloc or (not parsed.netloc and 'use.typekit.net' in parsed.path):
+    hostname = parsed.hostname
+    if hostname == 'use.typekit.net' or (not hostname and (parsed.path == 'use.typekit.net' or parsed.path.startswith('use.typekit.net/'))):
         return "__TYPEKIT__"
         
     # Check domain
