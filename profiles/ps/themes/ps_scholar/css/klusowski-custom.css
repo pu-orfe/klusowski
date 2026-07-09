@@ -1,6 +1,6 @@
 @media (min-width: 62rem) {
   .menu-logo--inline .site-branding {
-    min-height: auto;
+    min-height: 4.75rem;
   }
 
   .menu-logo--inline .site-branding .site-info {
@@ -8,23 +8,11 @@
   }
 
   .menu-logo--inline .site-branding .row > .site-info:last-child {
-    padding-top: 0.75rem;
-    padding-bottom: 0.9375rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   .menu-logo--inline .site-branding .site-name {
     white-space: nowrap;
   }
-}
-
-.profile-contact {
-  margin-bottom: 0.35rem;
-}
-
-.profile-cv-link {
-  margin-top: 0;
-}
-
-.profile-cv-link .cke-button-secondary {
-  margin-top: 0.75rem;
 }
