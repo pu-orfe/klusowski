@@ -69,6 +69,7 @@
 <link rel="stylesheet" media="all" href="/profiles/ps/themes/ps_base/css/styles.css?te5i7x" />
 <link rel="stylesheet" media="all" href="/profiles/ps/themes/ps_tiger/css/styles.css?te5i7x" />
 <link rel="stylesheet" media="all" href="/profiles/ps/themes/ps_scholar/css/styles.css?te5i7x" />
+<link rel="stylesheet" media="all" href="/profiles/ps/themes/ps_scholar/css/klusowski-custom.css" />
 <link rel="stylesheet" media="all" href="//use.typekit.net/ozr7oya.css" />
 <link rel="stylesheet" media="all" href="//use.typekit.net/xxx7asp.css" />
 <link rel="stylesheet" media="all" href="//use.typekit.net/bok5fgz.css" />
@@ -264,11 +265,11 @@
 
 
 
-<p class="text-align-center"><strong>Jason M. Klusowski</strong><br>
+<p class="text-align-center profile-contact"><strong>Jason M. Klusowski</strong><br>
 Associate Professor<br>
 <a href="https://orfe.princeton.edu">Operations Research &amp; Financial Engineering</a></p>
 
-<p class="text-align-center"><a class="cke-button-secondary" href="/sites/g/files/toruqf5901/files/documents/Klusowski_cv.pdf">CV</a></p></div>
+<p class="text-align-center profile-cv-link"><a class="cke-button-secondary" href="/sites/g/files/toruqf5901/files/documents/Klusowski_cv.pdf">CV</a></p></div>
       
   </div>
 <div class="block-ps-social-links with-block-description block block-layout-builder block-inline-blockps-social-links" data-block-plugin-id="inline_block:ps_social_links">

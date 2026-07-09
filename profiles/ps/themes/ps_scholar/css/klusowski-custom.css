@@ -1,0 +1,22 @@
+@media (min-width: 62rem) {
+  .menu-logo--inline .site-branding {
+    min-height: auto;
+  }
+
+  .menu-logo--inline .site-branding .row > .site-info:last-child {
+    padding-top: 1rem;
+    padding-bottom: 0;
+  }
+}
+
+.profile-contact {
+  margin-bottom: 0;
+}
+
+.profile-cv-link {
+  margin-top: 0;
+}
+
+.profile-cv-link .cke-button-secondary {
+  margin-top: 0.35rem;
+}
