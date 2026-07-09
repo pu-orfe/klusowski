@@ -88,7 +88,7 @@
       <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
     <div class="page page-container"> 
     <header role="banner" class="header" id="header">
-    <h1 class="sr-only sr-site-name">Jason M. Klusowski Associate Professor</h1>
+    <h1 class="sr-only sr-site-name">Jason M. Klusowski</h1>
         <a href="#main-content" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen: </span>Skip to content</a>
     <a href="#edit-search-keys" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen: </span>Skip to search</a>
     <div class="header-container container">
@@ -103,12 +103,9 @@
   <div class="site-branding">
     <div class="container">
       <div class="row">
-                                                                    <div class="site-info with-slogan with-slogan-suffix">
+                                                                    <div class="site-info">
                                       <div class="site-name">
                 <a href="/" title="Home" rel="home">Jason M. Klusowski</a>
-              </div>
-                                      <div class="site-slogan">
-                Associate Professor
               </div>
                                                           </div>
               </div>
@@ -269,9 +266,7 @@
 
 <p class="text-align-center"><strong>Jason M. Klusowski</strong><br>
 Associate Professor<br>
-<a href="https://orfe.princeton.edu">Operations Research &amp; Financial Engineering</a><br>
-Sherrerd Hall, Princeton, NJ 08544<br>
-(609) 258-0100</p>
+<a href="https://orfe.princeton.edu">Operations Research &amp; Financial Engineering</a></p>
 
 <p class="text-align-center"><a class="cke-button-secondary" href="/sites/g/files/toruqf5901/files/documents/Klusowski_cv.pdf">CV</a></p></div>
       
@@ -356,44 +351,6 @@ Sherrerd Hall, Princeton, NJ 08544<br>
     </div>
   </div>
 
-        <footer role="contentinfo" class="footer" id="footer">
-      <h2 class="sr-only">Footer</h2>
-      <div class="container">
-    <div class="region region-footer">
-      <div class="constrained-bkg-constrained-content layout layout--threecol-33-34-33">
-    <div class="layout-inner-container">
-      <div  class="layout__region layout__region--first layout__region--thirds layout__region--narrow">
-      </div>
-
-      <div  class="layout__region layout__region--second layout__region--thirds layout__region--narrow">
-        
-      </div>
-
-      <div  class="layout__region layout__region--third layout__region--thirds layout__region--narrow">
-        
-      </div>
-    </div>
-  </div>
-
-  </div>
-
-</div>
-
-<div class="subfooter">
-  <div class="container">
-    <div class="row">
-
-      
-      <div class="col-sm-12 col-md-4">
-        <a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"><img
-            src="/profiles/ps/themes/ps_base/images/pu-logo-stacked.svg" alt="Princeton University"/>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-    </footer>
-  
 </div> 
 
   </div>
