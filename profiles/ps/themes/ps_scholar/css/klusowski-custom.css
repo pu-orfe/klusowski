@@ -3,9 +3,17 @@
     min-height: auto;
   }
 
+  .menu-logo--inline .site-branding .site-info {
+    max-width: calc(45% - 10px);
+  }
+
   .menu-logo--inline .site-branding .row > .site-info:last-child {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.9375rem;
+  }
+
+  .menu-logo--inline .site-branding .site-name {
+    white-space: nowrap;
   }
 }
 
