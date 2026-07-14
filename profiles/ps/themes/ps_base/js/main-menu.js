@@ -3,8 +3,69 @@
  * Functions to improve the usability of the main menu.
  */
 
+/**
+ * Keep the mobile menu usable in the static mirror when Bootstrap's jQuery
+ * collapse plugin is unavailable. The original Drupal site supplied jQuery
+ * through core assets, but those assets are intentionally not part of this
+ * mirror anymore.
+ */
+(function () {
+  'use strict';
+
+  function initMobileMenuFallback() {
+    const bootstrapCollapseAvailable = window.jQuery &&
+      window.jQuery.fn &&
+      typeof window.jQuery.fn.collapse === 'function';
+
+    if (bootstrapCollapseAvailable) {
+      return;
+    }
+
+    document.querySelectorAll('.toggle-mobile-menu[data-target]').forEach(function (button) {
+      const menu = document.querySelector(button.getAttribute('data-target'));
+
+      if (!menu) {
+        return;
+      }
+
+      function setMenuOpen(open) {
+        button.setAttribute('aria-expanded', String(open));
+        menu.classList.toggle('show', open);
+        document.body.classList.toggle('mobile-menu-open', open);
+
+        const icon = button.querySelector('i');
+        if (icon) {
+          icon.classList.toggle('fa-bars', !open);
+          icon.classList.toggle('fa-times', open);
+        }
+      }
+
+      button.addEventListener('click', function () {
+        setMenuOpen(button.getAttribute('aria-expanded') !== 'true');
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.getComputedStyle(button).display === 'none') {
+          setMenuOpen(false);
+        }
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMobileMenuFallback);
+  }
+  else {
+    initMobileMenuFallback();
+  }
+})();
+
 (function ($) {
   'use strict';
+
+  if (!$) {
+    return;
+  }
 
   $(document).ready(function () {
 
@@ -291,4 +352,4 @@
     }
   });
 
-})(jQuery);
+})(window.jQuery);
