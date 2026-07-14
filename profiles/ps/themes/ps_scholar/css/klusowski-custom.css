@@ -18,6 +18,10 @@
 }
 
 @media (max-width: 61.94rem) {
+  .main-menu button.toggle-mobile-menu {
+    right: 1rem;
+  }
+
   .toggle-mobile-menu-icon > i {
     width: 0.875em;
     text-align: center;
