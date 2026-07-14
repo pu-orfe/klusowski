@@ -17,6 +17,13 @@
   }
 }
 
+@media (max-width: 61.94rem) {
+  .toggle-mobile-menu-icon > i {
+    width: 0.875em;
+    text-align: center;
+  }
+}
+
 .profile-contact {
   margin-bottom: 0.25rem;
 }
