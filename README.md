@@ -1,6 +1,6 @@
 # klusowski.princeton.edu Static Mirror
 
-This repository contains the static mirror of [klusowski.princeton.edu](https://klusowski.princeton.edu), hosted on GitHub Pages at [pu-orfe.github.io/klusowski](https://pu-orfe.github.io/klusowski/).
+This repository contains the static mirror of [klusowski.princeton.edu](https://klusowski.princeton.edu). It is published by GitHub Pages and served at [klusowski.princeton.edu](https://klusowski.princeton.edu) via the custom domain in `CNAME`, so the mirror has replaced the original Drupal site at that address. The default Pages URL, `pu-orfe.github.io/klusowski`, redirects to the custom domain.
 
 ## Project Structure
 
@@ -9,6 +9,7 @@ This repository contains the static mirror of [klusowski.princeton.edu](https://
 * `cv/` - LaTeX source, BibTeX references, and supporting class file for the downloadable CV.
 * `core/`, `profiles/`, `sites/`, `themes/`, `libraries/` - Static assets, images, CSS stylesheets, JavaScript files, and documents downloaded from the original site.
 * `.nojekyll` - Bypasses GitHub Pages' default Jekyll build processor so that assets starting with underscores or dots are served correctly.
+* `CNAME` - The custom domain GitHub Pages serves the site on.
 * `mirror.py` - The crawler script to scrape the site, download new files, and rewrite URLs.
 * `test_mirror.py` - Unit test suite for URL rewriting logic.
 * `Dockerfile` & `docker-compose.yml` - Docker setup to run the test suite in a containerized environment.
@@ -68,7 +69,7 @@ Please note: I am new to Git and GitHub-managed projects, so I need you to be ve
    - Stage the changes (`git add <file>`).
    - Commit the changes (`git commit -m "descriptive commit message"`).
    - Push the changes to GitHub (`git push`).
-3. Explain clearly that pushing to the 'main' branch will automatically trigger GitHub Actions to deploy the updates to the live site at https://pu-orfe.github.io/klusowski/ (which takes about 30 seconds).
+3. Explain clearly that pushing to the 'main' branch automatically triggers GitHub Pages' built-in `pages-build-deployment` run, which deploys the updates to the live site at https://klusowski.princeton.edu (which takes about 30 seconds). There are no workflow files in this repository; the deployment is configured in the repository's Pages settings, not in `.github/workflows`.
 
 Here are the key details and constraints of the codebase:
 - **Pages**: Static HTML files located at:
