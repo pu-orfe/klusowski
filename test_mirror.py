@@ -1,5 +1,5 @@
 import unittest
-from mirror import get_depth, get_relative_prefix, rewrite_url, rewrite_html
+from mirror import get_depth, get_relative_prefix, rewrite_url, rewrite_html, asset_path_for
 
 class TestMirror(unittest.TestCase):
     
@@ -72,6 +72,49 @@ class TestMirror(unittest.TestCase):
     def test_rewrite_url_typekit(self):
         self.assertEqual(rewrite_url('/', '//use.typekit.net/bok5fgz.css'), '__TYPEKIT__')
         self.assertEqual(rewrite_url('/publications', 'https://use.typekit.net/ozr7oya.css'), '__TYPEKIT__')
+
+    def test_asset_path_for(self):
+        # Real assets are tracked, with query strings and trailing slashes normalized
+        self.assertEqual(
+            asset_path_for('/profiles/ps/themes/ps_base/css/styles.css?v=1'),
+            '/profiles/ps/themes/ps_base/css/styles.css'
+        )
+        self.assertEqual(
+            asset_path_for('https://klusowski.princeton.edu/core/misc/drupal.js?v=11.2.11'),
+            '/core/misc/drupal.js'
+        )
+
+        # Pages are not assets, so they never get written to the mirror root
+        self.assertIsNone(asset_path_for('/homepage'))
+        self.assertIsNone(asset_path_for('/homepage/'))
+        self.assertIsNone(asset_path_for('https://klusowski.princeton.edu/caslogin'))
+        self.assertIsNone(asset_path_for('/caslogin'))
+        self.assertIsNone(asset_path_for('/'))
+        self.assertIsNone(asset_path_for('/publications'))
+
+        # External hosts and special protocols are not assets
+        self.assertIsNone(asset_path_for('https://orfe.princeton.edu/foo.css'))
+        self.assertIsNone(asset_path_for('mailto:example@princeton.edu'))
+        self.assertIsNone(asset_path_for('#main-content'))
+        self.assertIsNone(asset_path_for(''))
+        self.assertIsNone(asset_path_for(None))
+
+    def test_rewrite_html_skips_page_paths_as_assets(self):
+        # A nav link to /homepage and a login link that survives removal (no
+        # ps-login-link class) must not be queued for download.
+        html = """
+        <html><body>
+            <a href="/homepage">Home</a>
+            <a href="https://klusowski.princeton.edu/caslogin">Log in</a>
+            <link rel="stylesheet" href="/profiles/ps/themes/ps_base/css/styles.css">
+        </body></html>
+        """
+        discovered = set()
+        rewrite_html(html, '/publications', discovered)
+
+        self.assertNotIn('/homepage', discovered)
+        self.assertNotIn('/caslogin', discovered)
+        self.assertIn('/profiles/ps/themes/ps_base/css/styles.css', discovered)
 
     def test_rewrite_html(self):
         html = """

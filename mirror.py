@@ -16,6 +16,12 @@ LOCAL_PAGES = {
     '/group': 'group/index.html'
 }
 
+# Source-site paths that are pages rather than downloadable assets. '/homepage'
+# is the canonical URL of the root page and '/caslogin' is the CAS login
+# endpoint; treating either as an asset writes a stray extensionless file into
+# the mirror root.
+NON_ASSET_PATHS = {'/homepage', '/caslogin'}
+
 def get_depth(page_path):
     """Calculates the depth of a page path relative to root."""
     if page_path == '/':
@@ -98,6 +104,30 @@ def rewrite_url(current_page_path, url):
         rel_link += f"#{fragment}"
     return rel_link
 
+def asset_path_for(url):
+    """
+    Returns the normalized site path to mirror for url, or None if url is not a
+    local asset file (external host, special protocol, or a page).
+    """
+    if not url:
+        return None
+
+    if url.lower().startswith(('mailto:', 'tel:', 'javascript:', '#')):
+        return None
+
+    parsed = urllib.parse.urlparse(url)
+    if parsed.netloc and parsed.netloc != "klusowski.princeton.edu":
+        return None
+
+    norm_path = parsed.path if parsed.path else '/'
+    if norm_path.endswith('/') and len(norm_path) > 1:
+        norm_path = norm_path[:-1]
+
+    if norm_path in LOCAL_PAGES or norm_path in NON_ASSET_PATHS:
+        return None
+
+    return norm_path
+
 def download_file(url, output_path):
     """Downloads a file from url and saves it to output_path."""
     # Prevent downloading external/absolute URLs without domain
@@ -176,14 +206,9 @@ def rewrite_html(html_content, current_page_path, discovered_assets):
             tag[attr] = rewritten
             
         # If it's a local asset, track it for download
-        # (Exclude external links, anchor-only, special protocols, and mapped pages)
-        parsed = urllib.parse.urlparse(val)
-        if (not parsed.netloc or parsed.netloc == "klusowski.princeton.edu") and not val.lower().startswith(('mailto:', 'tel:', 'javascript:', '#')):
-            norm_path = parsed.path if parsed.path else '/'
-            if norm_path.endswith('/') and len(norm_path) > 1:
-                norm_path = norm_path[:-1]
-            if norm_path not in LOCAL_PAGES:
-                discovered_assets.add(norm_path)
+        asset = asset_path_for(val)
+        if asset:
+            discovered_assets.add(asset)
 
     # Process tags
     for tag in soup.find_all(['link', 'script', 'img', 'a', 'source', 'embed', 'object']):
@@ -210,11 +235,9 @@ def rewrite_html(html_content, current_page_path, discovered_assets):
                         subparts[0] = rewritten_img
                     parts.append(" ".join(subparts))
                     # Add to assets
-                    parsed = urllib.parse.urlparse(img_url)
-                    if not parsed.netloc or parsed.netloc == "klusowski.princeton.edu":
-                        norm_path = parsed.path if parsed.path else '/'
-                        if norm_path not in LOCAL_PAGES:
-                            discovered_assets.add(norm_path)
+                    asset = asset_path_for(img_url)
+                    if asset:
+                        discovered_assets.add(asset)
                 tag['srcset'] = ", ".join(parts)
         elif tag.name == 'a':
             process_attr(tag, 'href')
@@ -237,11 +260,9 @@ def rewrite_html(html_content, current_page_path, discovered_assets):
                         subparts[0] = rewritten_img
                     parts.append(" ".join(subparts))
                     # Add to assets
-                    parsed = urllib.parse.urlparse(img_url)
-                    if not parsed.netloc or parsed.netloc == "klusowski.princeton.edu":
-                        norm_path = parsed.path if parsed.path else '/'
-                        if norm_path not in LOCAL_PAGES:
-                            discovered_assets.add(norm_path)
+                    asset = asset_path_for(img_url)
+                    if asset:
+                        discovered_assets.add(asset)
                 tag['srcset'] = ", ".join(parts)
         elif tag.name in ['embed', 'object']:
             process_attr(tag, 'src')
