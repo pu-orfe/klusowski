@@ -141,7 +141,7 @@
 \NewDocumentEnvironment{rSubsection}{m m m m +b}{ % 4 parameters: company name, year(s) employed, job title and location
 	\par\noindent\textbf{#1} \hfill {#2} % Bold company name and date to the right
 	\ifthenelse{\equal{#3}{}}{}{ % If the third parameter is empty, don't output the job title and location line
-		\\ % Job title and location on a new line
+		\\* % Job title and location on a new line, kept with the heading
 		\textit{#3} \hfill \textit{#4} % Output job title and location
 	}%
 	\par\smallskip % Vertical whitespace
