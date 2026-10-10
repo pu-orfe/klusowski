@@ -18,138 +18,148 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%----------------------------------------------------------------------------------------
-%	CLASS CONFIGURATION
-%----------------------------------------------------------------------------------------
+% Layout helpers for the academic CV. Keep content in Klusowski_cv.tex.
+\ProvidesClass{resume}[2026/10/08 v4.0 Academic CV class]
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+\ProcessOptions\relax
+\LoadClass{article}
 
-\ProvidesClass{resume}[2022/12/17 v3.0 Resume class]
+\RequirePackage[T1]{fontenc}
+\RequirePackage{geometry,array,tabularx,xparse,etoolbox,enumitem,needspace}
+\RequirePackage{longtable,multicol,fancyhdr,xcolor}
+\geometry{top=0.75in,bottom=0.7in,left=0.75in,right=0.75in,
+  headheight=13pt,headsep=12pt,footskip=25pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlength{\emergencystretch}{1.5em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\raggedbottom
+\setlist[itemize]{leftmargin=1.1em,itemsep=2pt,parsep=0pt,topsep=3pt,partopsep=0pt}
 
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}} % Pass through any options to the base class
-\ProcessOptions\relax % Process given options
+\pagestyle{fancy}
+\fancyhf{}
+% Page labels make continuation headings follow the section at the top of a page.
+\newcommand{\cvSectionHeaders}{}
+\newcommand{\cvCheckContinuation}[2]{%
+  \ifnum\getpagerefnumber{cv-start-#1}<\value{page}%
+    \ifnum\getpagerefnumber{cv-end-#1}<\value{page}\else
+      \def\cvHeaderText{#2 (continued)}%
+    \fi
+  \fi
+}
+\newcommand{\cvRunningTitle}{%
+  \begingroup\def\cvHeaderText{Curriculum vitae}%
+  \cvSectionHeaders\cvHeaderText\endgroup
+}
+\fancyhead[L]{\small\color{black!55}Jason M. Klusowski}
+\fancyhead[R]{\small\color{black!55}\cvRunningTitle}
+\fancyfoot[L]{\footnotesize\color{black!55}Updated \today}
+\fancyfoot[R]{\footnotesize\color{black!55}Klusowski\enspace\textperiodcentered\enspace page \thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{firstpage}{\fancyhead{}}
 
-\LoadClass{article} % Load the base class
-
-%----------------------------------------------------------------------------------------
-%	REQUIRED PACKAGES AND MISC CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-
-\usepackage[parfill]{parskip} % Remove paragraph indentation
-
-\usepackage{array} % Required for bold tabular columns
-
-\usepackage{ifthen} % Required for ifthenelse statements
-
-\usepackage{xparse} % Required for environments that inspect their body
-
-\usepackage{graphicx} % Required for including images
-
-\pagestyle{empty} % Suppress headers and footers on all pages
-
-%----------------------------------------------------------------------------------------
-%	MARGINS
-%----------------------------------------------------------------------------------------
-
-\usepackage{geometry} % Required for adjusting page dimensions and margins
-
-\geometry{
-	top=0.6in, % Top margin
-	bottom=0.6in, % Bottom margin
-	left=0.75in, % Left margin
-	right=0.75in, % Right margin
-	%showframe, % Uncomment to show how the type block is set on the page
+\newcommand{\cvName}{}
+\newcommand{\name}[1]{\renewcommand{\cvName}{#1}}
+\newcommand{\cvContact}{}
+\newcommand{\address}[1]{\gappto\cvContact{#1}}
+\AtBeginDocument{%
+  \thispagestyle{firstpage}%
+  \begin{center}
+    {\LARGE\bfseries\MakeUppercase{\cvName}}\par
+    \vspace{3pt}
+    {\small\cvContact}
+  \end{center}
+  \vspace{-5pt}%
 }
 
-%----------------------------------------------------------------------------------------
-%	NAME AND ADDRESS COMMANDS
-%----------------------------------------------------------------------------------------
+\newcounter{cvSection}
+\newenvironment{rSection}[1]{%
+  \par\addvspace{13pt}%
+  \Needspace{5\baselineskip}%
+  \markright{#1}%
+  \stepcounter{cvSection}\pdfbookmark[0]{#1}{cv-section-\thecvSection}%
+  \label{cv-start-\thecvSection}%
+  \begingroup\edef\cvRegister{\endgroup
+    \noexpand\g@addto@macro\noexpand\cvSectionHeaders{%
+      \noexpand\cvCheckContinuation{\thecvSection}{\unexpanded{#1}}}}\cvRegister
+  {\normalsize\bfseries\MakeUppercase{#1}\par}%
+  \nobreak\vspace{2pt}\hrule\nobreak\vspace{5pt}%
+  \begin{list}{}{\setlength{\leftmargin}{0pt}\setlength{\rightmargin}{0pt}%
+    \setlength{\topsep}{0pt}\setlength{\parsep}{3pt}\setlength{\itemsep}{0pt}}%
+  \item[]%
+}{\end{list}\label{cv-end-\thecvSection}\par}
 
-\newcommand{\name}[1]{\renewcommand{\name}{#1}} % Defines the \name command to set the user's name
-
-\newcommand{\addressSep}{$\diamond$} % Set default address separator to a diamond symbol
-
-% One, two or three address lines can be specified
-\let \@addressone \relax
-\let \@addresstwo \relax
-\let \@addressthree \relax
-
-% The \address command is used to set the first, second and third address lines (the last 2 are optional)
-\newcommand{\address}[1]{
-	\@ifundefined{@addressone}{ % If the first address line has not been set yet, set it
-		\def \@addressone {#1}
-	}{
-		\@ifundefined{@addresstwo}{ % If the second address line has not been set yet, set it
-			\def \@addresstwo {#1}
-		}{ % Otherwise, set the third address line
-			\def \@addressthree {#1}
-		}%
-	}
+\newcommand{\cvGroupHeader}[1]{%
+  \par\addvspace{8pt}\Needspace{5\baselineskip}%
+  {\bfseries #1\par}\nopagebreak\vspace{1pt}%
+}
+\newcommand{\cvTypeHeader}[1]{%
+  \par\addvspace{4pt}\Needspace{4\baselineskip}%
+  {\itshape #1\par}\nopagebreak%
 }
 
-% \printaddress is used to style an address line (provided in the single parameter to the command)
-\newcommand{\printaddress}[1]{
-	\begingroup
-		\def \\ {\addressSep\ } % Redefine newlines (\\) to the address separator symbol so multiple lines of each address are output as a single line
-		\centerline{#1} % Output the centered address line
-	\endgroup
-	\par % End the paragraph to ensure correct spacing between lines
-	\smallskip % Vertical whitespace between address lines
+% One institutional heading can introduce several appointments or courses.
+\newcommand{\cvInstitution}[2]{%
+  \par\addvspace{6pt}\Needspace{5\baselineskip}%
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X@{\hspace{1em}}r@{}}
+    \textbf{#1} & {\small #2}
+  \end{tabularx}\par\nopagebreak%
 }
 
-% \printname is used to output the user's name in a large size
-\newcommand{\printname}{
-	\begingroup
-		\hfil{\MakeUppercase{\huge\bfseries\name}}\hfil % Style and output the user's name
-		\bigskip\break % Vertical whitespace below name
-	\endgroup
+% Date column and wrapping text column; keep each short entry on one page.
+\newcommand{\cvEntry}[3]{%
+  \par\addvspace{3pt}\noindent
+  \begin{minipage}{\linewidth}
+    \setlength{\parskip}{0pt}%
+    \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{1.22in}@{\hspace{1em}}>{\raggedright\arraybackslash}X@{}}
+      {\small #1} & #2\IfBlankF{#3}{\newline {\small #3}}
+    \end{tabularx}
+  \end{minipage}\par
+}
+\newcommand{\cvTalk}[3]{%
+  \par\addvspace{2pt}\noindent
+  \begin{minipage}{\linewidth}
+    \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{1.08in}@{\hspace{1em}}>{\raggedright\arraybackslash}X@{}}
+      {\small #1} & \textbf{#2}\IfBlankF{#3}{\enspace\textperiodcentered\enspace{\small #3}}
+    \end{tabularx}
+  \end{minipage}\par
 }
 
-%----------------------------------------------------------------------------------------
-%	OUTPUT THE NAME & ADDRESS LINES AUTOMATICALLY
-%----------------------------------------------------------------------------------------
+% A single sequence makes every research paper uniquely identifiable.
+\newlist{cvPaperList}{enumerate}{1}
+\setlist[cvPaperList]{label=\arabic*.,leftmargin=1.9em,labelsep=0.5em,
+  itemsep=4pt,parsep=2pt,topsep=2pt,partopsep=0pt,
+  beginpenalty=10000,midpenalty=100,endpenalty=0}
+\newcounter{cvPaperNumber}
+\newenvironment{cvPapers}{%
+  \begin{cvPaperList}\setcounter{cvPaperListi}{\value{cvPaperNumber}}%
+  \raggedright\interlinepenalty=10000
+  \clubpenalty=10000\widowpenalty=10000
+}{\setcounter{cvPaperNumber}{\value{cvPaperListi}}\end{cvPaperList}}
 
-\let\ori@document=\document % Store the original \document command
-\renewcommand{\document}{
-	\ori@document  % Output the original \document command but add to it below
-	\printname % Output the user's name
-	\@ifundefined{@addressone}{}{\printaddress{\@addressone}} % Output the first address if specified
-	\@ifundefined{@addresstwo}{}{\printaddress{\@addresstwo}} % Output the second address if specified
-	\@ifundefined{@addressthree}{}{\printaddress{\@addressthree}} % Output the third address if specified
-}
-
-%----------------------------------------------------------------------------------------
-%	SECTION FORMATTING
-%----------------------------------------------------------------------------------------
-
-% Defines the rSection environment for the major sections within the CV
-\newenvironment{rSection}[1]{ % The single parameter is for the section title
-	\medskip % Vertical whitespace
-	\MakeUppercase{\textbf{#1}} % Section title
-	\medskip % Vertical whitespace
-	\hrule % Horizontal rule
-	\begin{list}{}{ % List to indent the entire content of the section
-		\setlength{\leftmargin}{1.5em} % Indent to the left of the list
-	}
-	\item[] % Empty list item to enable indentation
-}{
-	\end{list}
-}
-
-%----------------------------------------------------------------------------------------
-%	WORK EXPERIENCE FORMATTING
-%----------------------------------------------------------------------------------------
-
-\NewDocumentEnvironment{rSubsection}{m m m m +b}{ % 4 parameters: company name, year(s) employed, job title and location
-	\par\noindent\textbf{#1} \hfill {#2} % Bold company name and date to the right
-	\ifthenelse{\equal{#3}{}}{}{ % If the third parameter is empty, don't output the job title and location line
-		\\* % Job title and location on a new line, kept with the heading
-		\textit{#3} \hfill \textit{#4} % Output job title and location
-	}%
-	\par\smallskip % Vertical whitespace
-	\IfBlankTF{#5}{}{%
-		\begin{list}{$\cdot$}{\leftmargin=1em} % \cdot used for bullets, no indentation
-			\setlength{\itemsep}{-0.5em} \vspace{-0.5em} % Reduce vertical spacing between items in the list for a tighter look
-			#5
-		\end{list}
-	}%
-	\vspace{0.5em} % Vertical whitespace after the end of the list
-}{}
+% Awards, grants, and service groups share the same restrained heading style.
+\NewDocumentEnvironment{rSubsection}{m m m m +b}{%
+  \par\addvspace{5pt}%
+  \IfBlankF{#1#2#3}{%
+    \Needspace{4\baselineskip}%
+    \noindent\begin{minipage}{\linewidth}
+      \setlength{\parskip}{1pt}%
+      \IfBlankTF{#2}{\textbf{#1}\par}{%
+        \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X@{\hspace{1em}}>{\raggedleft\arraybackslash}p{1.35in}@{}}
+          \textbf{#1} & #2
+        \end{tabularx}\par
+      }%
+      \IfBlankF{#3}{%
+        \IfBlankTF{#4}{{\itshape #3\par}}{%
+          \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X@{\hspace{1em}}>{\raggedleft\arraybackslash}p{1.35in}@{}}
+            \parbox[t]{\linewidth}{\itshape #3} & {\itshape #4}
+          \end{tabularx}\par
+        }%
+      }%
+    \end{minipage}\par\nopagebreak
+  }%
+  \IfBlankF{#5}{\begin{itemize}[label=\textperiodcentered]#5\end{itemize}}%
+}{\par}
